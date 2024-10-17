@@ -21,31 +21,31 @@
 
 
 class MyInteger(object):
-    def set_val(self, val):
+    def set_val(self, val): # <== This method forces us to input an integer
         try:
             val = int(val)
-        except ValueError:
+        except ValueError: # <== This is a good practice because it will catch any errors that might occur for example if a string is passed
             return
         self.val = val
 
-    def get_val(self):
+    def get_val(self): # <== This method prints the value
         print(self.val)
 
-    def increment_val(self):
+    def increment_val(self): # <== This method increments the value by 1
         self.val = self.val + 1
         print(self.val)
 
 
 a = MyInteger()
-a.set_val(10)
-a.get_val()
-a.increment_val()
+a.set_val(10) # <== Setting the value to 10
+a.get_val() # <== Printing the value
+a.increment_val() # <== Incrementing the value by 1
 print("\n")
 
 # Trying to break encapsulation in a new instance with an int
 c = MyInteger()
-c.val = 15
-c.get_val()
+c.val = 15 # <== Breaking encapsulation, works fine
+c.get_val() # <== Prints the val set by breaking encap
 c.increment_val()
 print("\n")
 
