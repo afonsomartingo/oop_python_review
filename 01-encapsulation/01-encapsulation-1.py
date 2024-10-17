@@ -16,7 +16,7 @@ class MyClass(object):
         self.value = val
 
     def get_val(self):
-        # print(self.value)
+        print(self.value)
         return self.value
 
 
@@ -39,3 +39,22 @@ b.get_val()
 # or add a print statement **above** `return` as `print(self.value)`.
 
 # b) Remove `return(self.value)` and replace it with `print(self.value)`
+
+class SpaceShuttle(object):
+    def __init__(self, count):
+        self.count = count + 1
+    def speed_calcule(self):
+        return self.count * 1000
+    
+    def __setattr__(self, name, value):
+        print(f"Setting {name} to {value}") # 
+        super().__setattr__(name, value)  # super() is used to call the parent class method, in this case, __setattr__(). __setattr__() is a built-in method in Python classes, which is called when an attribute assignment is made. It is used to set the attribute of an instance of a class.
+    def __getattribute__(self, name):
+        print(f"Getting {name}")
+        return super().__getattribute__(name) # super() is used to call the parent class method, in this case, __getattribute__(). __getattribute__() is a built-in method in Python classes, which is called when an attribute is accessed. It is used to access the attribute of an instance of a class.
+
+if __name__ == '__main__':
+    
+    count = 1
+    S = SpaceShuttle(count)
+    print(S.speed_calcule())
