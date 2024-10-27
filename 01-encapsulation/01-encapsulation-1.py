@@ -39,7 +39,7 @@ b.get_val()
 # or add a print statement **above** `return` as `print(self.value)`.
 
 # b) Remove `return(self.value)` and replace it with `print(self.value)`
-
+'''
 class SpaceShuttle(object):
     def __init__(self, count):
         self.count = count + 1
@@ -57,4 +57,4 @@ if __name__ == '__main__':
     
     count = 1
     S = SpaceShuttle(count)
-    print(S.speed_calcule())
+    print(S.speed_calcule()) '''
