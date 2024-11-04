@@ -132,5 +132,9 @@ REFERENCE: Check the code example in:
 
 Magic methods 
 
+# Credits 
 
+Original Repo 
+
+https://github.com/arvimal/oop_with_python
 
