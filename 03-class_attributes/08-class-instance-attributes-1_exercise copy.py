@@ -16,3 +16,28 @@ get_total_instances() (class method):
 
 Prints the total number of instances created so far.'''
 
+class ObjectCounter:
+    count = 0
+
+    def __init__(self, info):
+        ObjectCounter.count += 1
+        self.ID = ObjectCounter.count
+        self.info = info
+
+    def get_instance_info(self):
+        print(f"ID number: {self.ID}")
+        print(f"Info: {self.info}")
+
+    @classmethod
+    def get_total_instances(cls):
+        print(f"Total number of instances created so far: {cls.count}")
+
+
+a = ObjectCounter("First instance")
+b = ObjectCounter("Second instance")
+c = ObjectCounter("Third instance")
+
+a.get_instance_info()
+b.get_instance_info()
+c.get_instance_info()
+ObjectCounter.get_total_instances()
